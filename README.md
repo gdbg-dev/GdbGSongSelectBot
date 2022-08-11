@@ -1,4 +1,11 @@
-# discordpy-startup
+# README
+## このレポジトリについて
+Elbas810が個人で開発したdiscordbotの構成ファイルです。  
+コマンドを入力すると、GdbG個別楽曲のリンクをランダムに生成します。
+
+
+
+## (元レポジトリのREADME)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
