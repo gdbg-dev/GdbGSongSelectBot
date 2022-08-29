@@ -12,7 +12,7 @@ bot = commands.Bot(command_prefix='!')
 
 @bot.command()
 async def GdbGSelect(ctx):
-  if(ctx.message.channel.id ==　1013711594804498462):
+  if(ctx.message.channel.id==1013711594804498462):
    URLCommonStr="https://gdbg.tv/release/"
    year=random.randint(2009,2021)#2009~2021
    albumnum=year-2009
