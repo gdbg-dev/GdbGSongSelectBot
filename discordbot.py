@@ -11,8 +11,8 @@ import database as db
 bot = commands.Bot(command_prefix='!')
 
 @bot.command()
-async def GdbGSelect(ctx):
-  if(ctx.message.channel.id==1013711594804498462):
+async def Select(ctx):
+  if(ctx.message.channel.id==1006578076873932833):
    URLCommonStr="https://gdbg.tv/release/"
    year=random.randint(2009,2021)#2009~2021
    albumnum=year-2009
