@@ -8,7 +8,8 @@ import traceback
 import random
 import database as db
 
-bot = commands.Bot(command_prefix='!')
+intents = discord.Intents.all()
+bot = commands.Bot(command_prefix='!',intents=intents)
 
 @bot.command()
 async def Select(ctx):
