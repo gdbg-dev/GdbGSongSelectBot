@@ -57,7 +57,7 @@ async def select_in(ctx: interactions.CommandContext,year:str):
      disc=thisalbum[discpos-1]
      track=random.randint(1,disc)
      String=URLCommonStr+str(year)+"-"+str(discpos)+"-"+str(track) 
-     await ctx.send(year++"年おすすめの楽曲はこちら。\nThis is the song(released in "+year+") we recommend to you!\n"+String)
+     await ctx.send(year+"年おすすめの楽曲はこちら。\nThis is the song(released in "+year+") we recommend to you!\n"+String)
    else:#yearが範囲外
      await ctx.send("その年度のアルバムは存在しません。\nNo albums were released that year.",ephemeral=True)#送信者のみ表示
 
