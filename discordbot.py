@@ -10,8 +10,8 @@ import database as db
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='!',intents=intents)
-testchannel = getenv('TEST_CHANNEL')
-gdbgchannel = getenv('GDBG_CHANNEL')
+testchannel = int(getenv('TEST_CHANNEL'))
+gdbgchannel = int(getenv('GDBG_CHANNEL'))
 
 @bot.command()
 async def Select(ctx):
