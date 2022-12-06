@@ -9,7 +9,6 @@ import random
 import database as db
 
 intents = discord.Intents.all()
-intents.message_contents=True
 bot = commands.Bot(command_prefix='!',intents=intents)
 testchannel = getenv('TEST_CHANNEL')
 gdbgchannel = getenv('GDBG_CHANNEL')
