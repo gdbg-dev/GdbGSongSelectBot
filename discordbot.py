@@ -27,6 +27,9 @@ async def Select(ctx):
    track=random.randint(1,disc)
 
    String=URLCommonStr+str(year)+"-"+str(discpos)+"-"+str(track)
+   await ctx.send("今回のおすすめはこの楽曲。\nThis is the song we recommend to you!\n"+String)
+  else:
+   await ctx.send("このチャンネルではコマンドの使用が許可されていません。\nThat command can use only #XXX channel.")
     
 @bot.command()
 async def Select_in (ctx,year):
