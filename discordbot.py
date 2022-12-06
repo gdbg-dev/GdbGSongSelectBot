@@ -10,10 +10,12 @@ import database as db
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='!',intents=intents)
+testchannel = getenv('TEST_CHANNEL')
+gdbgchannel = getenv('GDBG_CHANNEL')
 
 @bot.command()
 async def Select(ctx):
-  if(ctx.message.channel.id==872096448387354685):
+  if(ctx.message.channel.id==testchannel)or(ctx.message.channel.id==gdbgchannel):
    URLCommonStr="https://gdbg.tv/release/"
    year=random.randint(2009,2021)#2009~2021
    albumnum=year-2009
@@ -28,7 +30,7 @@ async def Select(ctx):
     
 @bot.command()
 async def Select_in (ctx,year):
-  if(ctx.message.channel.id==872096448387354685):
+  if(ctx.message.channel.id==testchannel)or(ctx.message.channel.id==gdbgchannel):
    URLCommonStr="https://gdbg.tv/release/"
    albumnum=int(year)-2009
    albumlist=[[7,7,6,6,6],[17,17,5],[12,12,11],[12,12,13],[12,12,12],[10,9,9,10],[10,10,10,11],[10,10,10,10],[20,20],[6,5,5,6,5,5,5,5],[10,9,10,10,10],[12,12,12,12],[12,12,12,12]]
