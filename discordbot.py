@@ -32,8 +32,8 @@ async def select(ctx: interactions.CommandContext):
    await ctx.send("今回のおすすめはこの楽曲。\nThis is the song we recommend to you!\n"+String)
   else:
    await ctx.send("このチャンネルではコマンドの使用が許可されていません。\nThat command can use only #XXX channel.")
-    
-@slash_client.slash(name="select_in ", description="特定年のGdbG収録曲からランダムに1曲選出します。"
+  
+@bot.command(name="select_in ", description="特定年のGdbG収録曲からランダムに1曲選出します。"
     options = [
         interactions.Option(
             name="year",
