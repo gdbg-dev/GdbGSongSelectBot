@@ -35,7 +35,7 @@ async def select(ctx: interactions.CommandContext):
   
 @bot.command(
     name="select_in",
-    description="特定年のGdbG収録曲からランダムに1曲選出します。",,
+    description="特定年のGdbG収録曲からランダムに1曲選出します。",
     options = [
         interactions.Option(
             name="year",
