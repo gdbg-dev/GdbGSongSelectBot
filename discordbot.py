@@ -35,7 +35,7 @@ async def select(ctx: interactions.CommandContext):
   
 @bot.command(
     name="select_in",
-    description="特定年のGdbG収録曲からランダムに1曲選出します。",
+    description="特定年のGdbG収録曲からランダムに1曲選出します。",,
     options = [
         interactions.Option(
             name="year",
@@ -59,10 +59,10 @@ async def select_in(ctx: interactions.CommandContext,year:str):
      String=URLCommonStr+str(year)+"-"+str(discpos)+"-"+str(track) 
      await ctx.send("今回のおすすめはこの楽曲。\nThis is the song we recommend to you!\n"+String)
    else:#yearが範囲外
-     await ctx.send("その年度のアルバムは存在しません。\nNo albums were released that year.")
+     await ctx.send("その年度のアルバムは存在しません。\nNo albums were released that year.",ephemeral=True)#送信者のみ表示
 
   else:#専用チャンネル範囲外
-   await ctx.send("このチャンネルではコマンドの使用が許可されていません。\nThat command can use only #XXX channel.")
+   await ctx.send("このチャンネルではコマンドの使用が許可されていません。\nThat command can use only #XXX channel.",ephemeral=True)#送信者のみ表示
 
 
 
