@@ -15,7 +15,7 @@ gdbgchannel = getenv('GDBG_CHANNEL')
 
 @bot.command()
 async def Select(ctx):
-   print(ctx.message.channel.id)
+  print(ctx.message.channel.id)
   if(ctx.message.channel.id==testchannel)or(ctx.message.channel.id==gdbgchannel):
    URLCommonStr="https://gdbg.tv/release/"
    year=random.randint(2009,2021)#2009~2021
