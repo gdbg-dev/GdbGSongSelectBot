@@ -65,4 +65,4 @@ async def select_in(ctx: interactions.CommandContext,year:str):
 
 
 
-bot.run(token)
+bot.start()
