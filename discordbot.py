@@ -3,19 +3,20 @@ from operator import indexOf
 from ssl import RAND_add
 import discord
 from discord.ext import commands
+from discord_slash import SlashCommand, SlashContext
 from os import getenv
 import traceback
 import random
 import database as db
 
 intents = discord.Intents.all()
+slash_client = SlashCommand(bot, sync_commands=True)#スラッシュコマンド対応用
 bot = commands.Bot(command_prefix='/',intents=intents)
 testchannel = int(getenv('TEST_CHANNEL'))
 gdbgchannel = int(getenv('GDBG_CHANNEL'))
 
-@bot.command()
-async def Select(ctx):
-  print(ctx.message.channel.id)
+@slash_client.slash(name="select", description="すべてのGdbG収録曲からランダムに1曲選出します。")
+async def select(ctx: SlashContext):
   if(ctx.message.channel.id==testchannel)or(ctx.message.channel.id==gdbgchannel):
    URLCommonStr="https://gdbg.tv/release/"
    year=random.randint(2009,2021)#2009~2021
@@ -32,8 +33,8 @@ async def Select(ctx):
   else:
    await ctx.send("このチャンネルではコマンドの使用が許可されていません。\nThat command can use only #XXX channel.")
     
-@bot.command()
-async def Select_in (ctx,year):
+@slash_client.slash(name="select_in ", description="特定年のGdbG収録曲からランダムに1曲選出します。")
+async def select(ctx: SlashContext,year):
   if(ctx.message.channel.id==testchannel)or(ctx.message.channel.id==gdbgchannel):
    URLCommonStr="https://gdbg.tv/release/"
    albumnum=int(year)-2009
