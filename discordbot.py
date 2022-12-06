@@ -43,9 +43,9 @@ async def Select_in (ctx,year):
    String=URLCommonStr+str(year)+"-"+str(discpos)+"-"+str(track)    
 
 
-   await ctx.send("今回のおすすめはこの楽曲。\nThis is the song We recommend to you!\n"+String)
+   await ctx.send("今回のおすすめはこの楽曲。\nThis is the song we recommend to you!\n"+String)
   else:
-   await ctx.send("このチャンネルではコマンドの使用が許可されていません。That command can use only #XXX channel.")
+   await ctx.send("このチャンネルではコマンドの使用が許可されていません。\nThat command can use only #XXX channel.")
 
 
 token = getenv('DISCORD_BOT_TOKEN')
