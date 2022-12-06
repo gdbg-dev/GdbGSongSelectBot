@@ -34,7 +34,7 @@ async def select(ctx: interactions.CommandContext):
    await ctx.send("このチャンネルではコマンドの使用が許可されていません。\nThat command can use only #XXX channel.")
   
 @bot.command(
-    name="selectalbum ",
+    name="selectalbum",
     description="特定年のGdbG収録曲からランダムに1曲選出します。",
     options = [
         interactions.Option(
