@@ -33,7 +33,9 @@ async def select(ctx: interactions.CommandContext):
   else:
    await ctx.send("このチャンネルではコマンドの使用が許可されていません。\nThat command can use only #XXX channel.")
   
-@bot.command(name="select_in ", description="特定年のGdbG収録曲からランダムに1曲選出します。"
+@bot.command(
+    name="select_in ",
+    description="特定年のGdbG収録曲からランダムに1曲選出します。",
     options = [
         interactions.Option(
             name="year",
@@ -43,7 +45,7 @@ async def select(ctx: interactions.CommandContext):
         ),
     ],
  )
-async def select(ctx: interactions.CommandContext,year:str):
+async def select_in(ctx: interactions.CommandContext,year:str):
   if(ctx.message.channel.id==testchannel)or(ctx.message.channel.id==gdbgchannel):
    URLCommonStr="https://gdbg.tv/release/"
    albumnum=int(year)-2009
