@@ -31,7 +31,7 @@ async def select(ctx: interactions.CommandContext):
    String=URLCommonStr+str(year)+"-"+str(discpos)+"-"+str(track)
    await ctx.send("今回のおすすめはこの楽曲。\nThis is the song we recommend to you!\n"+String)
   else:
-   await ctx.send("このチャンネルではコマンドの使用が許可されていません。\nThat command can use only #XXX channel.")
+   await ctx.send("このチャンネルではコマンドの使用が許可されていません。\nThat command can use only #XXX channel.",,ephemeral=True)#送信者のみ表示
   
 @bot.command(
     name="select_in",
