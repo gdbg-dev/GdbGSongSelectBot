@@ -3,19 +3,18 @@ from operator import indexOf
 from ssl import RAND_add
 import discord
 from discord.ext import commands
-from interactions import Client, Intents, slash_command
+import interactions
 from os import getenv
 import traceback
 import random
 import database as db
 
-intents = discord.Intents.all()
 token = getenv('DISCORD_BOT_TOKEN')
-bot = Client(intents=Intents.DEFAULT)
+client = interactions.Client()
 testchannel = int(getenv('TEST_CHANNEL'))
 gdbgchannel = int(getenv('GDBG_CHANNEL'))
 
-@slash_command(name="select", description="すべてのGdbG収録曲からランダムに1曲選出します。")
+@interactions.slash_command(name="select", description="すべてのGdbG収録曲からランダムに1曲選出します。")
 async def select(ctx: interactions.SlashContext):
   if(ctx.channel_id==testchannel)or(ctx.channel_id==gdbgchannel):
    URLCommonStr="https://gdbg.tv/release/"
@@ -33,7 +32,7 @@ async def select(ctx: interactions.SlashContext):
   else:
    await ctx.send("このチャンネルではコマンドの使用が許可されていません。\nThat command can use only #XXX channel.",ephemeral=True)#送信者のみ表示
   
-@slash_command(
+@interactions.slash_command(
     name="select_in",
     description="特定年のGdbG収録曲からランダムに1曲選出します。",
     options = [
@@ -66,4 +65,4 @@ async def select_in(ctx: interactions.SlashContext,year:str):
 
 
 
-bot.start(token)
+client.start(token)
