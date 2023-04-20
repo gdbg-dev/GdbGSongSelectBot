@@ -34,16 +34,13 @@ async def select(ctx: interactions.SlashContext):
   
 @interactions.slash_command(
     name="select_in",
-    description="特定年のGdbG収録曲からランダムに1曲選出します。",
-    options = [
-        interactions.Option(
+    description="特定年のGdbG収録曲からランダムに1曲選出します。")
+@interactions.slash_option(
             name="year",
             description="2009~2022までの年数4桁",
             type=interactions.OptionType.STRING,
             required=True,
-        ),
-    ],
- )
+        )
 async def select_in(ctx: interactions.SlashContext,year:str):
   if(ctx.channel_id==testchannel)or(ctx.channel_id==gdbgchannel):
    if(2009<=int(year))and(int(year)<=2022):#対応年度
