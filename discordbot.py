@@ -11,11 +11,11 @@ import database as db
 
 intents = discord.Intents.all()
 token = getenv('DISCORD_BOT_TOKEN')
-client = interactions.Client()
+bot = Client(intents=Intents.DEFAULT)
 testchannel = int(getenv('TEST_CHANNEL'))
 gdbgchannel = int(getenv('GDBG_CHANNEL'))
 
-@bot.command(name="select", description="すべてのGdbG収録曲からランダムに1曲選出します。")
+@slash_command(name="select", description="すべてのGdbG収録曲からランダムに1曲選出します。")
 async def select(ctx: interactions.CommandContext):
   if(ctx.channel_id==testchannel)or(ctx.channel_id==gdbgchannel):
    URLCommonStr="https://gdbg.tv/release/"
@@ -33,7 +33,7 @@ async def select(ctx: interactions.CommandContext):
   else:
    await ctx.send("このチャンネルではコマンドの使用が許可されていません。\nThat command can use only #XXX channel.",ephemeral=True)#送信者のみ表示
   
-@bot.command(
+@slash_command(
     name="select_in",
     description="特定年のGdbG収録曲からランダムに1曲選出します。",
     options = [
