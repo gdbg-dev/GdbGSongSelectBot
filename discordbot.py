@@ -11,7 +11,7 @@ import database as db
 
 intents = discord.Intents.all()
 token = getenv('DISCORD_BOT_TOKEN')
-bot = interactions.Client(token)
+bot = interactions.Client(self,token)
 testchannel = int(getenv('TEST_CHANNEL'))
 gdbgchannel = int(getenv('GDBG_CHANNEL'))
 
