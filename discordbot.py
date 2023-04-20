@@ -3,7 +3,7 @@ from operator import indexOf
 from ssl import RAND_add
 import discord
 from discord.ext import commands
-from interactions import Client, Intents, listen
+from interactions import Client, Intents, slash_command
 from os import getenv
 import traceback
 import random
