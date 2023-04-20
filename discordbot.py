@@ -19,9 +19,9 @@ gdbgchannel = int(getenv('GDBG_CHANNEL'))
 async def select(ctx: interactions.CommandContext):
   if(ctx.channel_id==testchannel)or(ctx.channel_id==gdbgchannel):
    URLCommonStr="https://gdbg.tv/release/"
-   year=random.randint(2009,2021)#2009~2021
+   year=random.randint(2009,2022)#2009~2022
    albumnum=year-2009
-   albumlist=[[7,7,6,6,6],[17,17,5],[12,12,11],[12,12,13],[12,12,12],[10,9,9,10],[10,10,10,11],[10,10,10,10],[20,20],[6,5,5,6,5,5,5,5],[10,9,10,10,10],[12,12,12,12],[12,12,12,12]]
+   albumlist=[[7,7,6,6,6],[17,17,5],[12,12,11],[12,12,13],[12,12,12],[10,9,9,10],[10,10,10,11],[10,10,10,10],[20,20],[6,5,5,6,5,5,5,5],[10,9,10,10,10],[12,12,12,12],[12,12,12,12],[10,10,9,10,10]]
    thisalbum=albumlist[albumnum]
    albumsize=len(thisalbum)
    discpos=random.randint(1,albumsize)#ディスクきめ
@@ -39,7 +39,7 @@ async def select(ctx: interactions.CommandContext):
     options = [
         interactions.Option(
             name="year",
-            description="2009~2021までの年数4桁",
+            description="2009~2022までの年数4桁",
             type=interactions.OptionType.STRING,
             required=True,
         ),
@@ -47,10 +47,10 @@ async def select(ctx: interactions.CommandContext):
  )
 async def select_in(ctx: interactions.CommandContext,year:str):
   if(ctx.channel_id==testchannel)or(ctx.channel_id==gdbgchannel):
-   if(2009<=int(year))and(int(year)<=2021):#対応年度
+   if(2009<=int(year))and(int(year)<=2022):#対応年度
      URLCommonStr="https://gdbg.tv/release/"
      albumnum=int(year)-2009
-     albumlist=[[7,7,6,6,6],[17,17,5],[12,12,11],[12,12,13],[12,12,12],[10,9,9,10],[10,10,10,11],[10,10,10,10],[20,20],[6,5,5,6,5,5,5,5],[10,9,10,10,10],[12,12,12,12],[12,12,12,12]]
+     albumlist=[[7,7,6,6,6],[17,17,5],[12,12,11],[12,12,13],[12,12,12],[10,9,9,10],[10,10,10,11],[10,10,10,10],[20,20],[6,5,5,6,5,5,5,5],[10,9,10,10,10],[12,12,12,12],[12,12,12,12],[10,10,9,10,10]]
      thisalbum=albumlist[albumnum]
      albumsize=len(thisalbum)
      discpos=random.randint(1,albumsize)#ディスクきめ
