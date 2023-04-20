@@ -55,12 +55,12 @@ async def select_in(ctx: interactions.SlashContext,year:int):
      disc=thisalbum[discpos-1]
      track=random.randint(1,disc)
      String=URLCommonStr+str(year)+"-"+str(discpos)+"-"+str(track) 
-     await ctx.send(year+"年おすすめの楽曲はこちら。\nThis is the song(released in "+year+") we recommend to you!\n"+String)
+     await ctx.send(str(year)+"年おすすめの楽曲はこちら。\nThis is the song(released in "+str(year)+") we recommend to you!\n"+String)
    else:#yearが範囲外
      await ctx.send("その年度のアルバムは存在しません。\nNo albums were released that year.",ephemeral=True)#送信者のみ表示
 
   else:#専用チャンネル範囲外
-   await ctx.send("このチャンネルではコマンドの使用が許可されていません。\nThat command can use only #XXX channel.",ephemeral=True)#送信者のみ表示
+   await ctx.send("このチャンネルではコマンドの使用が許可されていません。\nThat command can use only #select_bot channel.",ephemeral=True)#送信者のみ表示
 
 
 
