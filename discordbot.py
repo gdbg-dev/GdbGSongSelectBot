@@ -38,8 +38,8 @@ async def select(ctx: interactions.SlashContext):
 @interactions.slash_option(
             name="year",
             description="2009~2022までの年数4桁",
-            type=interactions.OptionType.STRING,
-            required=True,
+            opt_type=OptionType.INTEGER,
+            required=True
         )
 async def select_in(ctx: interactions.SlashContext,year:str):
   if(ctx.channel_id==testchannel)or(ctx.channel_id==gdbgchannel):
