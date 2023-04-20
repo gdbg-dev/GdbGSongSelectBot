@@ -16,7 +16,7 @@ testchannel = int(getenv('TEST_CHANNEL'))
 gdbgchannel = int(getenv('GDBG_CHANNEL'))
 
 @slash_command(name="select", description="すべてのGdbG収録曲からランダムに1曲選出します。")
-async def select(ctx: interactions.CommandContext):
+async def select(ctx: InteractionContext):
   if(ctx.channel_id==testchannel)or(ctx.channel_id==gdbgchannel):
    URLCommonStr="https://gdbg.tv/release/"
    year=random.randint(2009,2022)#2009~2022
@@ -45,7 +45,7 @@ async def select(ctx: interactions.CommandContext):
         ),
     ],
  )
-async def select_in(ctx: interactions.CommandContext,year:str):
+async def select_in(ctx: InteractionContext,year:str):
   if(ctx.channel_id==testchannel)or(ctx.channel_id==gdbgchannel):
    if(2009<=int(year))and(int(year)<=2022):#対応年度
      URLCommonStr="https://gdbg.tv/release/"
