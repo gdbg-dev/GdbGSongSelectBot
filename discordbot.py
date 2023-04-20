@@ -11,7 +11,7 @@ import database as db
 
 intents = discord.Intents.all()
 token = getenv('DISCORD_BOT_TOKEN')
-bot = interactions.Client(token)
+client = interactions.Client()
 testchannel = int(getenv('TEST_CHANNEL'))
 gdbgchannel = int(getenv('GDBG_CHANNEL'))
 
@@ -66,4 +66,4 @@ async def select_in(ctx: interactions.CommandContext,year:str):
 
 
 
-bot.start()
+bot.start(token)
