@@ -38,7 +38,9 @@ async def select(ctx: interactions.SlashContext):
 @interactions.slash_option(
             name="year",
             description="2009~2022までの年数4桁",
-            opt_type=OptionType.INTEGER,
+            opt_type=interactions.OptionType.INTEGER
+            min_value=2009
+            max_value=2022
             required=True
         )
 async def select_in(ctx: interactions.SlashContext,year:str):
